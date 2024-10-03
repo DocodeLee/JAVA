@@ -55,4 +55,71 @@ public class Main {
 	}
 
 }
+
+## Input data
+package fisrtprogram;   
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
 		
+		Scanner scanner = new Scanner(System.in); // when getting input
+		
+		System.out.println("What is your name? ");
+		String name = scanner.nextLine();
+		System.out.println("How old are you? ");
+		int age = scanner.nextInt(); // it only get int
+		// next line doesn't work : nextint doesn't read new line
+		scanner.nextLine(); // clean the scanner for the next question
+		System.out.println("What is your favorite food?");
+		String food = scanner.nextLine();
+		
+		System.out.println("Hello " + name);
+		System.out.println("Your age " + age + " years old");
+		System.out.println("You like " + food);
+		
+		
+	}
+
+}
+## expression
+public class Main {
+
+	public static void main(String[] ags){
+		// expression = operands & operators
+		// operands = values, variables, numbers, quantity
+		// operators = + - * / (% = remain)
+		
+		double friends = 10; // int friends = 10;
+		
+		friends = friends + 1;
+		friends++;
+		friends--;
+		// friends = friends / 2; // "/" only store integar
+		friends = friends / 3;
+		
+		System.out.println(friends);
+	}
+
+}
+
+## GUI info
+import javax.swing.JOptionPane;
+
+public class Main {
+
+	public static void main(String[] ags){
+		
+		String name = JOptionPane.showInputDialog("Enter your name");
+		JOptionPane.showMessageDialog(null,"Hello "+ name);
+		
+		int age = Integer.parseInt(JOptionPane.showInputDialog("Enter your age"));
+		JOptionPane.showMessageDialog(null, "Your age " + age + " old");
+		
+		double height = Double.parseDouble(JOptionPane.showInputDialog("Enter your height"));
+		JOptionPane.showMessageDialog(null, "Your age " + height + " cm tall");
+		
+	}
+
+}
