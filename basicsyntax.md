@@ -169,3 +169,27 @@ public class Main {
 	}
 
 }
+
+## Random Value
+import java.util.Random;
+
+public class Main {
+
+	public static void main(String[] ags){
+		
+		
+		Random random = new Random();
+		
+		//int x = random.nextInt(6); //0~5
+		//int y = random.nextInt(6)+1; //0~6
+		//double z = random.nextDouble();
+		
+		boolean x = random.nextBoolean();
+  
+		System.out.println(x); // no limit
+				
+		
+	}
+
+}
+
