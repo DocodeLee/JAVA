@@ -192,4 +192,55 @@ public class Main {
 	}
 
 }
+## If statement
+public class Main {
+
+	public static void main(String[] ags){
+		
+		int age = 82;
+		// if statement stop when it finds a true statement
+		if(age == 75) {
+			System.out.println("OK Boomer! "); 
+		}
+		else if(age >= 18) {
+			System.out.println("You are an adult");
+		}
+		else if(age >= 13) {
+			System.out.println("You are a teen ager");
+		}
+		else {
+			System.out.println("You are a child");
+		}
+		
+		
+		
+	}
+
+ ## Switch
+ public static void main(String[] ags){
+		
+		//switch = statement that allows a variable to be tested for equality against a list of value			
+		
+		String day = "Saturday";
+		
+		switch(day) {
+		case "Sunday" : System.out.println("It is Sunday");
+		break;
+		case "Monday" : System.out.println("It is Monday");
+		break;
+		case "Tuesday" : System.out.println("It is Tuesday");
+		break;
+		case "Wednesday" : System.out.println("It is Wednesday");
+		break;
+		case "Thursday" : System.out.println("It is Thursday");
+		break;
+		case "Friday" : System.out.println("It is Friday");
+		break;
+		case "Saturday" : System.out.println("It is Saturday");
+		break;
+		default: System.out.println("That is not a day!");
+		}
+	}
+
+}
 
