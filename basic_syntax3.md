@@ -51,3 +51,84 @@ public class Main {
 	}
 
 }
+
+## overload methods
+public class Main {
+
+	public static void main(String[] ags) {
+		
+		// overloads methods = methods that share the same name but have different parameters
+		// 			share method name + parameters but it makes specific method signature
+		
+		double x = add(1.1, 2.2, 3.3);
+		System.out.println(x);
+		
+	}
+	
+	// each method will be call up when parameter is match
+	
+	static int add(int a, int b) {
+		System.out.println("This is overload method #1");
+		return a+b;
+	}
+	static int add(int a, int b,int c) {
+		System.out.println("This is overload method #2");
+		return a + b + c;
+	}
+	static int add(int a, int b,int c, int d) {
+		System.out.println("This is overload method #3");
+		return a + b + c + d;
+	}
+	static double add(double a, double b) {
+		System.out.println("This is overload method #4");
+		return a+b;
+	}
+	static double add(double a, double b, double c) {
+		System.out.println("This is overload method #5");
+		return a + b + c;
+	}
+	static double add(double a, double b, double c, double d) {
+		System.out.println("This is overload method #6");
+		return a + b + c + d;
+	}
+	
+}
+## printf
+public class Main {
+
+	public static void main(String[] ags) {
+		
+		// printf() = an optional method to control, format, and display text to the console window
+		// 	   			two argument = format string + (object/variable/value)
+		//				% [flags] [precision] [width] [conversion-character]
+		System.out.printf("This is a format string %d", 123); //%d will appear number
+		System.out.println();
+		// conversion character
+		boolean myBoolean = true; 	// %b
+		char myChar = '@';			// %c
+		String myString = "LEE";		// %s
+		int myInt = 50;				// %d
+		double myDouble = 1000;	// %f
+		
+		System.out.printf("%.2f",myDouble);
+		System.out.println();
+		//[width]
+		System.out.printf("Hello %10s", myString); //%-10s make blanks on right side
+		System.out.println();
+		
+		
+		//[precision]
+		// sets the number of digits of precision
+		System.out.printf("You havve this much money %.2f",myDouble);
+		
+		System.out.println();
+		//[flags]
+		// adds an effect to output based on the flag added to format specifier
+		// -: left-justify 
+		// + :output a plus or minus sign for an numeric value
+		// 0 : numeric values are zero-padded
+		// , : comma grouping separator if numbers > 1000
+		
+	}
+
+}
