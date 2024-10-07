@@ -150,3 +150,42 @@ public static void main(String[] ags) {
 	
 }
 
+## OOP
+public class Main {
+
+	public static void main(String[] ags) {
+		
+		// object = an instance of a class that may contain attributes and methods
+		// example = phone, desk, computer, etc
+		
+		Car myCar1 = new Car(); // we call the Car class
+		Car myCar2 = new Car();
+		
+		System.out.println(myCar1.model);
+		System.out.println(myCar1.make);
+		
+		System.out.println(myCar2.model);
+		System.out.println(myCar2.make);
+		
+		myCar1.drive();
+		
+		
+	}
+	
+}    
+public class Car {
+	
+	String make = "Chevrolet";
+	String model = "Corvette";
+	int year = 2020;
+	String color = "Blue";
+	double price = 5000.00;
+	
+	void drive() {
+		System.out.println("you are driving the car");
+	}
+	void brake() {
+		System.out.println("you step on the brakes");
+	}
+
+}
