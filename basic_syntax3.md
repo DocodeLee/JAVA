@@ -25,3 +25,29 @@ public class Main {
 	}
 
 }
+
+## methods
+public class Main {
+
+	public static void main(String[] ags) {
+		
+		// method = a block of code that is executed whenever it is called upon
+		String name = "Lee";
+		int age = 21;
+		
+		hello(name, age); // we don't need to unify the parameter names with method
+		
+		int x = 3;
+		int y = 4;
+		
+		System.out.println(add(x,y));
+		
+	}
+	static void hello(String title, int age) { // method called hello with parameters
+		System.out.println("hello " + title +" age is " + age); 
+	}
+	static int add(int x, int y) {
+		return x+y;
+	}
+
+}
