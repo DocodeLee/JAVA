@@ -190,7 +190,7 @@ public class Car {
 
 }
 
-## construction
+## constructors
 
 package fisrtprogram;
 import java.util.*;
@@ -209,7 +209,7 @@ public class Main {
 		human1.drink();
 	}
 	
-}
+}   
 
 package fisrtprogram;
 
@@ -247,7 +247,7 @@ public class Main {
 		DiceRoller diceRoller = new DiceRoller();
 		
 	}
-}
+}   
 public class DiceRoller{
 	
 	// global || or you can paste as para
@@ -268,3 +268,86 @@ public class DiceRoller{
 }
 
 ## overloaded constructors
+public class Main {
+
+	public static void main(String[] ags) {
+		
+		//overloaded constructors = multiple constructors within a class with the same name
+		//								but have different paras (name + para + signature)
+		
+		Pizza pizza = new Pizza("Thick crust","tomato","mozzarella","pepperoni"); //pizza objects
+		Pizza pizza2 = new Pizza("Thick crust","tomato","mozzarella");
+		Pizza pizza3 = new Pizza("Thick crust","tomato");
+		Pizza pizza4 = new Pizza("Thick crust");
+		
+		System.out.println("Here are the ingredients of your pizza");
+		System.out.println(pizza.bread);
+		System.out.println(pizza.sauce);
+		System.out.println(pizza.cheese);
+		System.out.println(pizza.topping);
+		
+	
+	}
+}   
+public class Pizza{
+	
+	String bread;
+	String sauce;
+	String cheese;
+	String topping;
+	
+	Pizza(String bread){
+		this.bread = bread;
+}
+	
+	Pizza(String bread,	String sauce){
+		this.bread = bread;
+		this.sauce = sauce;
+}
+	
+	Pizza(String bread,	String sauce, String cheese){
+		this.bread = bread;
+		this.sauce = sauce;
+		this.cheese = cheese;
+}
+	
+	Pizza(String bread,	String sauce, String cheese, String topping	){
+			this.bread = bread;
+			this.sauce = sauce;
+			this.cheese = cheese;
+			this.topping = topping;
+	}
+	
+}
+
+## tostring method
+public class Main {
+
+	public static void main(String[] ags) {
+		
+		// toString() = special method that all objects inherit, that returns a string that
+		//				"Textually represents" an objects. 
+		//             can be used both implicitly and explicitly
+		
+		
+		Car car = new Car();
+		
+		
+		
+		// System.out.println(car.toString()); //show where is the memory
+		System.out.println(car); //same results
+	
+	}
+}   
+public class Car{
+	String make = "Ford";
+	String model = "Mustang";
+	String color = "red";
+	int year = 2021;
+	
+	public String toString() {
+		return make + "\n" + model + "\n" + color + "\n" + year;
+	}
+	
+}
+
