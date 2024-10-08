@@ -189,3 +189,82 @@ public class Car {
 	}
 
 }
+
+## construction
+
+package fisrtprogram;
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] ags) {
+		
+		Human human1 = new Human("Rick", 65, 78); //constructor : help to make different attributes
+		Human human2 = new Human("Marie", 55, 45);
+		
+		System.out.println(human1.name);
+		System.out.println(human2.name);
+		
+		human2.eat();
+		human1.drink();
+	}
+	
+}
+
+package fisrtprogram;
+
+public class Human {
+	
+	String name;
+	int age;
+	double weight;
+		
+	Human(String name, int age, double weight){
+		
+		this.name = name;
+		this.age = age;
+		this.weight = weight;
+		
+	}
+	void eat() {
+		System.out.println(this.name+" is eating");
+	}
+	void drink() {
+		System.out.println(this.name+ " is drinking");
+	}
+}
+
+## variable scope
+
+public class Main {
+
+	public static void main(String[] ags) {
+	
+		//local = declared inside a method
+		
+		// global = declared outside a method but within a class visible to all parts of a class
+	
+		DiceRoller diceRoller = new DiceRoller();
+		
+	}
+}
+public class DiceRoller{
+	
+	// global || or you can paste as para
+	Random random;
+	int num = 0;
+	
+	DiceRoller(){ //constructor
+		random = new Random(); // only visible in this method
+					// only visible in this method
+		roll();
+	}
+	
+	void roll() {
+		num = random.nextInt(6)+1;
+		System.out.println(num);
+	}
+	
+}
+
+## overloaded constructors
