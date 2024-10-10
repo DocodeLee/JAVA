@@ -142,4 +142,41 @@ public class Bicycle extends Vehicle{
 	int wheels = 2;
 	int pedals = 2;
 }
+## method overiding
+
+public class Main {
+
+	public static void main(String[] ags) {
+	
+		//method overriding : declaring a method in sub class/
+		// which is already present in parent class, child class can give its own implementation
+		
+		Animal animal = new Animal();
+		Dog dog = new Dog();
+		
+		dog.speak();
+		animal.speak();
+		
+		
+	}
+}   
+
+public class Animal{
+	
+	void speak() { // Overridden method
+		System.out.println("The animal speaks");
+	}
+	
+
+	
+}   
+public class Dog extends Animal{
+
+	@Override
+	void speak() {
+		System.out.println("The dog goes bark**");
+	}
+	
+
+}
 
