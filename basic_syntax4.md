@@ -268,3 +268,60 @@ public class Car extends Vehicle{
 ### public : you can use even in other packages
 ### protected : you can use until child class
 ### private : you can use only in same class
+
+## encapsulation
+
+public class Main {
+
+	public static void main(String[] ags) {
+		
+		// Encapsulation : attributes of a class will be hidden or private
+		// 			 can be accessed only through methods(getter & setters)
+		// you should make attributes private if you don't have a reason to make them public/protected
+		
+		Car car = new Car("Kia","K5", 2022);
+		System.out.println(car.getMake());
+		System.out.println(car.getYear());
+		
+		car.setYear(2023); // can change attributes
+		System.out.println(car.getYear());
+		
+		
+	}
+}    
+public class Car {
+	
+	//private only open for this class
+	private String make;
+	private String model;
+	private int year;
+	
+	Car(String make, String model, int year){
+		this.setMake(make);
+		this.setModel(model);
+		this.setYear(year);
+	}
+	
+	// change private to accessable
+	public String getMake() {
+		return make;
+	}
+	public String getModel() {
+		return model;
+	}
+	public int getYear() {
+		return year;
+	}
+	
+	public void setMake(String make) {
+		this.make = make;
+	}
+	public void setModel(String model) {
+		this.model = model;
+	}
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+}   
+## Copy objcts
