@@ -325,3 +325,73 @@ public class Car {
 
 }   
 ## Copy objcts
+public class Main {
+
+	public static void main(String[] ags) {
+		
+		// Encapsulation : attributes of a class will be hidden or private
+		// 			 can be accessed only through methods(getter & setters)
+		// you should make attributes private if you don't have a reason to make them public/protected
+		
+		Car car1 = new Car("Chevrolet","Camero", 2021);
+		//Car car2 = new Car("Ford","Mustang", 2022);
+		
+		// car2 = car1; makes equal not good even share same address
+		
+		//car2.copy(car1); // give another address
+		Car car2 = new Car(car1);
+
+		
+		
+	}
+}   public class Car {
+	
+	//private only open for this class
+	private String make;
+	private String model;
+	private int year;
+	
+	// overloaded constructor
+	Car(String make, String model, int year){
+		this.setMake(make);
+		this.setModel(model);
+		this.setYear(year);
+	}
+	// copy constructor
+	Car(Car x){
+		this.copy(x);
+		}
+	
+	
+	
+	
+	// change private to accessable
+	public String getMake() {
+		return make;
+	}
+	public String getModel() {
+		return model;
+	}
+	public int getYear() {
+		return year;
+	}
+	
+	// this setter makes you can change value on parent class
+	public void setMake(String make) {
+		this.make = make;
+	}
+	public void setModel(String model) {
+		this.model = model;
+	}
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	// copy method is added
+	public void copy(Car x) {
+		this.setMake(x.getMake());
+		this.setModel(x.getModel());
+		this.setYear(x.getYear());
+		
+	}
+}
