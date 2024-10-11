@@ -231,5 +231,37 @@ public class Hero extends Person{
 		return super.toString()+this.power;
 	}
 
+}   
+## abstraction
+public class Main {
+
+	public static void main(String[] ags) {
+		// abstraction : abstract classes cannot be instantiated, but they can have subclass
+		// 				abstract methods are declared without an implementation
+		
+		// Vehicle vehicle = new Vehicle(); (we cannot declare abstract class)
+		Car car = new Car();
+		
+		car.go();
+		
+	}
+}   
+public abstract class Vehicle{ //abstract modifier
+	
+	abstract void go(); // abstract method does not have body
+
+	
+}      
+public class Car extends Vehicle{
+
+	@Override
+	void go() {
+		System.out.println("The driver is driving car");
+		
+	}
+	
+	
+
 }
+
 
