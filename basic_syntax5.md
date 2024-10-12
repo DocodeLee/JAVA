@@ -249,3 +249,210 @@ public class Main {
 		
 	}
 }   
+## File Reader
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Main {
+
+	public static void main(String[] ags) {
+		
+		// File Reader : read the contents of a file as a stream of characters.
+		//  	 one by one read() returns an int value which contains the byte value
+		//		when read() returns -1, there is no more data to be read
+		
+		try {
+			FileReader reader = new FileReader("art.txt");
+			int data = reader.read();
+			while(data != -1) {
+				System.out.print((char)data);
+				data = reader.read();
+			}
+			reader.close();			
+			
+		} catch(FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+}
+
+## Audio
+import java.io.File;
+import java.io.IOException;
+import javax.sound.sampled.*;
+
+public class Main {
+
+	public static void main(String[] ags) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+
+		Scanner scanner = new Scanner(System.in);
+		
+		File file = new File("Level_Up.wav");
+		AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+		Clip clip = AudioSystem.getClip();
+		clip.open(audioStream);
+		
+		String response = "";
+		
+		while(!response.equals("Q")) {
+			System.out.println("P = play, S = Stop, R = Reset, Q = Quit");
+			System.out.print("Enter Your Choice : ");
+			
+			response = scanner.next();
+			response = response.toUpperCase();
+			
+			switch(response) {
+				case ("P") : clip.start();
+				break;
+				case ("S") : clip.stop();
+				break;
+				case ("R") : clip.setMicrosecondPosition(0);
+				break;
+				case ("Q") : clip.close();
+				break;
+				default: System.out.println("Not a valid response");
+			}
+			
+		}
+		System.out.println("Byee!");
+		
+	}
+}   
+## Frame in java
+
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+
+
+public class Main {
+
+	public static void main(String[] ags){
+
+		// JFrame = A GUI window to add components to
+		
+		/*
+		JFrame frame = new JFrame(); // create a frame
+		
+		frame.setTitle("JFrame title goes here"); // set title of frame
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //exit out of application
+		// DO_NOTHING_ON_CLOSE , HIDE_ON_CLOSE
+		frame.setResizable(false); //prevent frame from being re-sized
+		frame.setSize(500,500); // set x,y dimension of frame
+		frame.setVisible(true); //make frame visible
+		
+		//SETTING ICON
+		ImageIcon image = new ImageIcon("JP.gif"); //create an imageIcon
+		frame.setIconImage(image.getImage());
+		
+		// Background color
+		frame.getContentPane().setBackground(new Color(40,82,94)); // change color of background		
+		*/
+		
+		
+		new MyFrame();// MyFrame myFrame = new MyFrame();
+		
+	}
+}
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+
+public class MyFrame extends JFrame {
+
+	MyFrame(){		
+		this.setTitle("Jthis title goes here"); // set title of frame
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //exit out of application
+		// DO_NOTHING_ON_CLOSE , HIDE_ON_CLOSE
+		this.setResizable(false); //prevent frame from being re-sized
+		this.setSize(500,500); // set x,y dimension of frame
+		this.setVisible(true); //make frame visible
+		
+		//SETTING ICON
+		ImageIcon image = new ImageIcon("JP.gif"); //create an imageIcon
+		this.setIconImage(image.getImage());
+		
+		// Background color
+		this.getContentPane().setBackground(new Color(40,82,94)); // change color of background		
+		
+	}
+}
+## labels
+
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.border.Border;
+
+
+public class Main {
+
+	public static void main(String[] ags){
+
+		// JLabel : a GUI display area for a string of text, an image, or both
+		
+		ImageIcon image = new ImageIcon("JP.gif");
+		Border border = BorderFactory.createLineBorder(Color.GREEN,5);
+		
+		JLabel label = new JLabel(); // create a label
+		label.setText("Hey, Do you even code?"); //set text of label
+		label.setIcon(image);
+		
+		label.setHorizontalTextPosition(JLabel.CENTER); // LEFT, CENTER, RIGHT
+		label.setVerticalTextPosition(JLabel.TOP);// TOP,CENTER,BOTTOM
+		
+		label.setForeground(new Color(0,244,0)); // font color
+		label.setFont(new Font("MV Boli",Font.PLAIN,50)); // font style
+		label.setIconTextGap(50); //set gap of text to image
+		label.setBackground(new Color(22,35,5));//set background color
+		label.setOpaque(true); //display background color
+		label.setBorder(border);
+		
+		label.setVerticalAlignment(JLabel.CENTER); // set vertical position of icon text within label
+		label.setHorizontalAlignment(JLabel.CENTER);// set horizontal position of icon text within label
+		
+		// label.setBounds(20, 20, 480, 400); // set x,y position with in frame as well as dimensions
+		
+		MyFrame myFrame = new MyFrame(); //new MyFrame();
+		myFrame.add(label);
+		myFrame.pack(); // need to use right after add(label)
+		
+	}
+}
+
+import java.awt.Color;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+
+public class MyFrame extends JFrame {
+
+	MyFrame(){		
+		this.setTitle("Jthis title goes here"); // set title of frame
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //exit out of application
+		// DO_NOTHING_ON_CLOSE , HIDE_ON_CLOSE
+		// this.setResizable(false); //prevent frame from being re-sized
+		this.setSize(500,500); // set x,y dimension of frame
+		this.setVisible(true); //make frame visible
+		// this.setLayout(null); //set layout
+		
+		//SETTING ICON
+		ImageIcon image = new ImageIcon("JP.gif"); //create an imageIcon
+		this.setIconImage(image.getImage());
+		
+		// Background color
+		this.getContentPane().setBackground(new Color(40,82,94)); // change color of background		
+		
+	}
+}
