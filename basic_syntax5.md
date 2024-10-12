@@ -66,3 +66,49 @@ public interface Predator {
 	void hunt();
 
 }   
+## polymorphism
+public static void main(String[] ags) {
+		
+		// polymorphism : greek word for poly = many morph= form
+		// 				the ability of an object to identify as more than one type
+		
+		Car car = new Car();
+		Bicycle bicycle = new Bicycle();
+		Boat boat = new Boat();
+		
+		// Car[] racers = {car, bicycle, boat}; //error
+		// Bicycle [] racers = {car, bicycle, boat}; //error
+		
+		Vehicle[] racers = {car, bicycle, boat};
+		
+		for(Vehicle x : racers) {
+			x.go();
+		}
+		
+	}
+}   
+public class Vehicle{
+
+	public void go() {
+		
+		
+	}
+
+	
+}   
+public  class Car extends Vehicle{
+
+	@Override
+	public void go() {
+		System.out.println("The Car begins moving");
+	}
+}   
+public class Bicycle extends Vehicle{
+
+	@Override
+	public void go() {
+		System.out.println("The Bicycle begins moving");
+	}
+
+}   
+
