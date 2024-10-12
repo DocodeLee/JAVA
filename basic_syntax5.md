@@ -197,6 +197,53 @@ public class Main {
 		finally {
 			scanner.close();
 		}
+
+  ## File Class
+  import java.io.File;
+
+public class Main {
+
+	public static void main(String[] ags) {
+		
+		//file : an abstract representation of file and directory path-names
+		
+		File file = new File("secret_message.txt"); //detect project unit
+		
+		if(file.exists()) {
+			System.out.println("That file exists! :)");
+			System.out.println(file.getPath());
+			System.out.println(file.getAbsolutePath());
+			System.out.println(file.isFile());
+			file.delete();
+		}
+		else {
+			System.out.println("That file doesn't exist :(");
+		}
+		
+	}
+}   
+## Filer Writer
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Main {
+
+	public static void main(String[] ags) {
+		
+		try {
+			FileWriter writer = new FileWriter("poem.txt");
+			writer.write("Roses are red. \nViolets are blue \n Booty booty booty \n Rockin everywhere");
+			writer.append("\n (A poem by Lee)");
+			writer.close();
+		} 
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}   
+
 		
 	
 		
