@@ -111,4 +111,94 @@ public class Bicycle extends Vehicle{
 	}
 
 }   
+## Dynamic Polymorphism
+public static void main(String[] ags) {
+		
+		// polymorphism : many shapes/forms
+		// dynamic = after compilation (during runtime)
+		
+		// ex. A corvette is a: corvette, and a car, and a vehicle, and an object
+		
+		
+		Scanner scanner = new Scanner(System.in);
+		Animal animal;
+		
+		System.out.println("What animal do you want?");
+		System.out.println("(1 = dog) or (2 = cat): ");
+		int choice = scanner.nextInt();
+		
+		if(choice == 1) {
+			animal = new Dog();
+			animal.speak();
+		}
+		else if(choice == 2) {
+			animal = new Cat();
+			animal.speak();
+		}
+		else {
+			animal = new Animal();
+			System.out.println("That choice was invalid");
+			animal.speak();
+		}
 
+		
+	}
+}   
+public class Animal {
+
+	public void speak() {
+		System.out.println("Animal goes *brrr*");
+	}
+}   
+public class Dog extends Animal {
+
+	@Override
+	public void speak() {
+		System.out.println("Dog goes *bark*");
+	}
+}   
+public class Cat extends Animal {
+	
+	@Override
+	public void speak() {
+		System.out.println("Cat goes *meow*");
+	}
+
+}   
+## exception handling
+public class Main {
+
+	public static void main(String[] ags) {
+		
+		// exception = an event that occurs during the execution of a program that
+		// 		disrupts the normal flow of instructions
+		Scanner scanner = new Scanner(System.in);
+		try {
+
+			System.out.println("Enter a whole number to divide: ");
+			int x = scanner.nextInt();
+			System.out.println("Enter a whole number to divide by: ");
+			int y = scanner.nextInt();
+		
+			int z = x/y;
+		
+			System.out.println("Result: " + z);
+			// when you divide by 0 exception error occurred
+		}
+		catch(ArithmeticException e) {
+			System.out.println("You can't divide by zero! IDIOT!");
+		}
+		catch(InputMismatchException e) {
+			System.out.println("Please enter a number OMFG!!");
+		}
+		catch(Exception e) { // catch basically all exceptions
+			System.out.println("Wooo. something went wrong");
+		}
+		finally {
+			scanner.close();
+		}
+		
+	
+		
+	}
+}   
