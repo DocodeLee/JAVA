@@ -386,3 +386,52 @@ public  class NewWindow{
 	}
 	
 }
+
+## JOptionPane
+public class Main {
+
+	public static void main(String[] ags){
+		
+		//JOptionPane = pop up a standard dialog box that prompts users for a value of inform
+		
+		//JOptionPane.showMessageDialog(null,"This is some PLAIN_MESSAGE", "title", JOptionPane.PLAIN_MESSAGE);
+		//JOptionPane.showMessageDialog(null,"This is INFORMATION_MESSAGE", "title", JOptionPane.INFORMATION_MESSAGE);
+		//JOptionPane.showMessageDialog(null,"This is QUESTION_MESSAGE", "title", JOptionPane.QUESTION_MESSAGE);
+		//JOptionPane.showMessageDialog(null,"This is WARNING_MESSAGE", "title", JOptionPane.WARNING_MESSAGE);
+		//JOptionPane.showMessageDialog(null,"This is ERROR_MESSAGE", "title", JOptionPane.ERROR_MESSAGE);
+		
+		
+		//int answer =JOptionPane.showConfirmDialog(null, "bro do you even code?","This is Title",JOptionPane.YES_NO_CANCEL_OPTION);
+		// 0,1,2 for each button
+		//String name = JOptionPane.showInputDialog("what is Your name: ");
+		
+		String[] responses = {"No, You are awesome","Thank you","*blush"};
+		ImageIcon icon = new ImageIcon("JP.gif");
+		JOptionPane.showOptionDialog(null, 
+				"You are Awesome", 
+				"Secret", 
+				JOptionPane.YES_NO_CANCEL_OPTION, 
+				JOptionPane.INFORMATION_MESSAGE, 
+				icon, responses, 0);
+		
+		
+		
+		
+	}
+}
+
+## TextField
+public class Main {
+
+	public static void main(String[] ags){
+		
+		//JTextField = A GUI textbox component that can be used to add, set,or get text
+		
+		MyFrame frame = new MyFrame();
+		
+		
+				
+	}
+}   
+## CheckBox
+
