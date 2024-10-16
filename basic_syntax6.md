@@ -434,4 +434,47 @@ public class Main {
 	}
 }   
 ## CheckBox
+public class MyFrame extends JFrame implements ActionListener{
 
+	JButton button;
+	JCheckBox checkBox;
+	ImageIcon xIcon;
+	ImageIcon checkIcon;
+	MyFrame(){
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLayout(new FlowLayout());
+		
+		xIcon = new ImageIcon("JP.gif");
+		checkIcon = new ImageIcon("JP.gif");
+		
+		
+		
+		button = new JButton();
+		button.setText("Submit");
+		button.addActionListener(this);
+		
+		
+		checkBox = new JCheckBox();
+		checkBox.setText("I am not a robot");
+		checkBox.setFocusable(false);
+		checkBox.setFont(new Font("Consolas",Font.PLAIN,30));
+		checkBox.setIcon(xIcon);// until here doesn't change by input change
+		checkBox.setSelectedIcon(checkIcon);
+		
+		this.add(button);
+		this.add(checkBox);
+		this.pack();
+		this.setVisible(true);
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==button) {
+			System.out.println(checkBox.isSelected());
+			
+		}
+		
+	}
+
+
+}
