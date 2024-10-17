@@ -55,3 +55,41 @@ public class Main {
 		
 	}
 }
+## ComboBox
+public class MyFrame extends JFrame implements ActionListener{
+
+	JComboBox comboBox;
+	
+	MyFrame(){
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLayout(new FlowLayout());
+		
+		String[] animals = {"Dog", "Cat", "Bird"}; //we need pass reference data type for combobox
+		
+		comboBox = new JComboBox(animals);
+		comboBox.addActionListener(this);
+		
+		//comboBox.setEditable(true);
+		//System.out.println(comboBox.getItemCount());
+		//comboBox.addItem("Horse");
+		//comboBox.insertItemAt("Pig", 2);
+		//comboBox.setSelectedIndex(0);
+		//comboBox.removeItem("Cat");
+		//comboBox.removeItemAt(0);
+		//comboBox.removeAll();
+		
+		this.add(comboBox);
+		this.pack();
+		this.setVisible(true);
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == comboBox) {
+		System.out.println(comboBox.getSelectedItem());
+		// System.out.println(comboBox.getSelectedIndex());
+		
+	}
+		
+	}
+}
