@@ -439,3 +439,59 @@ public class MyFrame extends JFrame implements KeyListener{
 
 	
 }
+## MouseListener
+public class MyFrame extends JFrame implements MouseListener{
+	
+	JButton button;
+	JLabel label;
+	
+	MyFrame(){
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setSize(500,500);
+		this.setLayout(null);
+		
+		label = new JLabel();
+		label.setBounds(0,0, 100, 100);
+		label.setBackground(Color.red);
+		label.setOpaque(true);
+		this.addMouseListener(this); // the place is important
+		this.add(label);
+		this.setVisible(true);		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// when a mouse button has been clicked and released
+		//System.out.println("You clicked the mouse");
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// when a mouse button has been pressed
+		System.out.println("You pressed the mouse");
+		label.setBackground(Color.yellow);
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// when a mouse button has been released
+		System.out.println("You released the mouse");
+		label.setBackground(Color.green);
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// when a mouse enter the area
+		System.out.println("You entered the mouse");
+		label.setBackground(Color.blue);
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// when a mouse exit the area
+		System.out.println("You exited the mouse");
+		label.setBackground(Color.red);
+	}
+
+	
+}
