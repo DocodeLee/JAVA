@@ -477,3 +477,73 @@ public class Main {
 		
 	}
 }
+## Multi threading
+
+public class Main {
+	
+	
+	public static void main(String[] ags) throws InterruptedException {
+	
+		// multithreading : process of executing multiple threads simultaneously
+		// helps maximum utilization of CPU
+		
+		// create a subclass of thread
+		MyThread thread1 = new MyThread(); //thread class
+		
+		//or
+		
+		// implement runnable interface and pass interfaces as an arguments
+		MyRunnable runnable1 = new MyRunnable(); //implements runnable interfaces
+		Thread thread2 = new Thread(runnable1); // other way to creating thread
+		
+		// JVM doesn't wait Daemon Thread
+		
+		thread1.setDaemon(true);
+		thread2.setDaemon(true);// when becomes Daemon: it goes back to priority
+		
+		thread1.start();
+		//thread1.join(2000); // main class wait until thread1 finish
+		thread2.start();
+		
+		//System.out.println(1/0); all the thread run // this block daemon thread run
+		
+	}
+ }
+   
+ public class MyThread extends Thread{
+
+	
+	@Override
+	public void run() {
+		
+		for(int i = 10 ; i >= 0 ; i--) {
+			System.out.println(" Thread #1 : " +i);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			//System.out.println(1/0); only thread 1 stops
+		}
+		System.out.println("Thread #1 is finished :(");
+	}
+}
+   
+public class MyRunnable implements Runnable{
+
+	@Override
+	public void run() {
+		for(int i = 0 ; i <= 10; i++) {
+			System.out.println(" Thread #2 : " +i);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		System.out.println("Thread #2 is finished :(");
+	}
+
+
+
+}
