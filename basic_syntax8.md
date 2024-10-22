@@ -286,3 +286,44 @@ public class MyGenericClass <Thing extends Number , Thing2 extends Number> { //C
 	}
 	
 }
+
+## Serialization
+public class Main {
+	
+	
+	public static void main(String[] ags) throws IOException{
+		
+		// Serialization : the process of converting an object into a byte stream
+		//					Persists (saves the state) the object after program exits
+		//					This byte stream can be saved as a file or sent over a network
+		//					Can be sent to a different machine
+		//					Byte stream can be saved as a file(.ser) which is platform independent
+		//					(Think of this as if you're saving a file with the objects information)
+		
+		// Deserialization : The reverse process of converting a byte stream into object
+		//								(loading file)
+		
+		User user = new User();
+		
+		user.name = "Lee";
+		user.password = "I<3Pizza";
+		
+		FileOutputStream fileOut = new FileOutputStream("UserInfo.ser");
+		ObjectOutputStream out = new ObjectOutputStream(fileOut);
+		out.writeObject(user);
+		out.close();
+		fileOut.close();
+		
+		System.out.println("object info saved! : ");
+	}
+ }   
+ public class User implements Serializable{
+	
+	String name;
+	String password;
+	
+	public void sayHello() {
+		System.out.println("Hello " + name);
+	}
+	
+}
