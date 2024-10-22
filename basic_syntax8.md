@@ -359,3 +359,14 @@ public class Main {
 	}
 	
 }
+## serialize notes
+1. children class of a parent class that implements Serializable will do as so as well
+2. static fields are not serialized (they belong to the class , not an individual object)
+3. theclass's definition ("class file") itself is not recorded , cast need
+4. Fields declared as "transient" are not serialized, ignored
+5. serialVersionUID is a unique version ID for a class that serializable
+
+6. serialVersionUID : serialVersionUID is a unique id taht function like a version #
+
+long serialVersionUID = ObjectStreamClass.Lookup(user.getClass()).getSerialVersionUID(); //use UID as address
+
