@@ -81,3 +81,59 @@ public class Game {
 	}
 
 }
+## 2D Graphics
+public class MyFrame extends JFrame{
+	
+	MyPanel panel;
+	
+	MyFrame(){
+		
+		panel = new MyPanel();
+		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		this.add(panel);
+		this.pack();
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
+	}
+	
+	
+	
+}
+public void paint(Graphics g) {
+		
+	
+		
+		Graphics2D g2D = (Graphics2D)g;
+		g2D.drawImage(image, 0,0, null);
+		g2D.setPaint(Color.blue);
+		g2D.setStroke(new BasicStroke(5));//thickness
+		//g2D.drawLine(0, 0, 500, 500);
+		
+		//g2D.setPaint(Color.pink);
+		//g2D.drawRect(0, 0, 100, 100); //not filled
+		//g2D.fillRect(0, 0, 100, 100);
+		
+		//g2D.setPaint(Color.orange);
+		//g2D.drawOval(20, 20, 100, 100);
+		//g2D.fillOval(200, 200, 100, 100);
+		//g2D.setPaint(Color.red);
+		//g2D.fillArc(0,0,100,100, 0, 180);
+		//g2D.setPaint(Color.white);
+		//g2D.fillArc(0,0,100,100, 180, 180);
+		
+		int[] xPoints = {150,250,350};
+		int[] yPoints = {300,150,300};
+		g2D.setColor(Color.black);
+		g2D.drawPolygon(xPoints,yPoints,3);
+		g2D.fillPolygon(xPoints,yPoints,3);
+		
+		g2D.setColor(Color.magenta);
+		g2D.setFont(new Font("Ink Free",Font.BOLD,50));
+		g2D.drawString("U R A winner", 50, 50);
+		
+		g2D.drawImage(image, 0,0, null);
+	}
+
+}
