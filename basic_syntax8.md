@@ -327,3 +327,35 @@ public class Main {
 	}
 	
 }
+## Deserializing
+public class Main {
+	
+	
+	public static void main(String[] ags) throws IOException, ClassNotFoundException{
+	
+		User user = null; // declare do not instantiate
+		
+		FileInputStream fileIn = new FileInputStream("D:\\JAVA\\eclipse-workspace\\fisrtprogram\\UserInfo.ser");
+		ObjectInputStream in = new ObjectInputStream(fileIn);
+		user= (User) in.readObject();
+		in.close();
+		fileIn.close();
+		
+		System.out.println(user.name);		
+		System.out.println(user.password);
+		user.sayHello();
+		
+		
+	}
+ }
+
+ public class User implements Serializable{
+	
+	String name;
+	String password;
+	
+	public void sayHello() {
+		System.out.println("Hello " + name);
+	}
+	
+}
