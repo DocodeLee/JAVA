@@ -245,3 +245,44 @@ public class Main {
 		return array[0];
 	}	
  }
+## Generics
+public class Main {
+	
+	
+	public static void main(String[] ags){
+		
+		// bounded types : you can create objects of a generic class to have data of specific
+		// 					derived types (ex.number
+		MyGenericClass <Integer, Integer> myInt = new MyGenericClass<>(1,2);
+		MyGenericClass <Double, Double> myDouble = new MyGenericClass<>(3.14,4.3);
+		// extends Number  make this cannot work
+		//MyGenericClass <Character, Character> myChar = new MyGenericClass<>('a','b');
+		//MyGenericClass <String, Character> myString = new MyGenericClass<>("a",'#');
+		
+		ArrayList<String> myFriends = new ArrayList<>(); //similar with generic class
+		HashMap<Integer, String> users = new HashMap<>(); // similar with generic class 2 para
+		
+		System.out.println(myInt.getValue());
+		System.out.println(myDouble.getValue());
+		//System.out.println(myChar.getValue());
+		//System.out.println(myString.getValue());
+		
+		
+	}
+}    
+public class MyGenericClass <Thing extends Number , Thing2 extends Number> { //Class Number (Double, Integer..)
+	//Number bound the parameter as numbers
+
+	Thing x;
+	Thing2 y;
+	
+	MyGenericClass(Thing x, Thing2 y){
+		this.x = x;
+		this.y = y;
+	}
+	
+	public Thing2 getValue() {
+		return y;
+	}
+	
+}
